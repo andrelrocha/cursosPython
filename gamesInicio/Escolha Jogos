@@ -1,0 +1,11 @@
+import utilidade1.adivinhação as adivinhação
+import utilidade1.forca
+
+print("Bem vindo ao Site Andre Jogos. \nVocê pode escolher qual jogo você quer jogar.")
+print("\nNós possuímos, por enquanto, dois jogos.")
+print("i) Jogo de Adivinhação. \nii) Jogo de Forca")
+choice=int(input("Escolha o jogo que você quer jogar: "))
+
+#if choice==1:
+
+#elif choice==2:

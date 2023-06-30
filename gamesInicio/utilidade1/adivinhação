@@ -1,0 +1,52 @@
+#Jogo de Advinhação com Tentativas (Pontuação)
+import random
+print("Olá visitante. Que tal jogar um jogo?")
+print("\nChute um número dentro do limite previsto (1-100) e veja se você acerta o número secreto.")
+print("\nNo nosso jogo temos três níveis de dificuldades:")
+print("1) Fácil \n2) Médio \n3) Difícil")
+print("\nDigite um número entre 1 e 3 para definir o nível do seu jogo.")
+nivel=int(input("Digite o nível de dificuldade que você quer jogar: "))
+tentativas=0
+pontos=1000
+cont=0
+certo=random.randrange(1,101)
+
+while nivel<1 or nivel>3:
+    print("\nNúmero digitado inválido. \n\nDigite um número válido entre 1 e 3 para definir o nível do seu jogo!")
+    nivel=int(input("Digite o nível de dificuldade que você quer jogar: "))
+    cont+=1
+    if cont==2 and (nivel<1 or nivel>3):
+        print("\nVocê não quer jogar.")
+        break
+if nivel>=1 and nivel<=3:
+    if nivel==1:
+        tentativas=12
+    elif nivel==2:
+        tentativas=6
+    elif nivel==3:
+        tentativas=3
+    for x in range(1,tentativas+1,1):
+        print("\nTentativa {} de {} tentativas".format(x,tentativas))
+        chute=int(input("Chute um número aleatório entre 1 e 100: "))
+        print("\nVocê digitou",chute)
+        if chute<1 or chute>100:
+            print("\nDigite um número válido.")
+            continue
+        else:
+            acertou=chute==certo
+            maior=chute>certo
+            menor=chute<certo
+            if acertou:
+                print("\nParabéns! Você acertou seu chute e fez {} pontos".format(pontos))
+                break
+            else:
+                if maior:
+                    print("\nQuase! Seu número é maior que o número secreto.")
+                else:
+                    print("\nQuase! Seu número é menor que o número secreto.")
+                lost_pts=abs(certo-chute)
+                pontos=pontos-lost_pts
+    if acertou==False:
+        print("\nO número secreto era",certo)
+
+print("\nFim do Jogo. \n\nVolte Novamente!")

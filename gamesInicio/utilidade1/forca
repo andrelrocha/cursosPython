@@ -1,0 +1,13 @@
+#Jogo de Forca
+print("Olá visitante. Que tal jogar um jogo?")
+print("\nChute um número dentro do limite previsto (1-100) e veja se você acerta o número secreto.")
+print("\nNo nosso jogo temos três níveis de dificuldades:")
+print("1) Fácil \n2) Médio \n3) Difícil")
+print("\nDigite um número entre 1 e 3 para definir o nível do seu jogo.")
+nivel=int(input("Digite o nível de dificuldade que você quer jogar: "))
+tentativas=0
+pontos=1000
+cont=0
+
+
+print("\nFim do Jogo. \n\nVolte Novamente!")
